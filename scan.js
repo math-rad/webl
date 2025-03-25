@@ -5,14 +5,30 @@ class Scanner {
 
   scan(source) {
     const tokens = {}
+    let currentToken = ""
+    let currentOffset = 0;
+
+    function branch() {
+      tokens = [tokens]
+    }
+
+    function drop() {
+      tokens = tokens[0]
+    }
 
     function pushToken() {
       tokens.push(currentToken)
     }
 
     function doublePush(token) {
-      pushToken()
-      currentToken 
+      pushToken();
+      currentToken = token; 
+      pushToken();
+    }
+
+    for (let characterIndex = 0; characterIndex < source.length; characterIndex++) {
+      const character = source[characterIndex]      
+    }
   }
 }
 
