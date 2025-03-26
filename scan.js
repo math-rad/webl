@@ -9,7 +9,9 @@ class Scanner {
     let currentOffset = 0;
 
     function branch() {
-      tokens = [tokens]
+      const newBase = [tokens]
+      tokens.shift(newBase)
+      tokens = newBase
     }
 
     function drop() {
